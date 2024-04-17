@@ -7,9 +7,12 @@ const FeedbackList = () => {
   const loggedinUser = JSON.parse(localStorage.getItem('storeData'))
 
   useEffect(() => {
-    axios.get('http://localhost:5000/feedback')
-    .then(data => setFeedbacks(data.data))
-    .catch(err => console.log(err));
+    // axios.get('http://localhost:5000/feedback')
+    // .then(data => setFeedbacks(data.data))
+    // .catch(err => console.log(err));
+
+    const feedBacks = JSON.parse(localStorage.getItem('feedbacks'));
+    setFeedbacks(feedBacks);
   }, []);
 
   const handleSearch = e =>{

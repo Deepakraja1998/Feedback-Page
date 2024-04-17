@@ -21,8 +21,8 @@ const FeedbackForm = () => {
     const newFeedback = { email, name, comment,roll:'user'};
     const updatedFeedbacks = [...feedbacks, newFeedback];
     setFeedbacks(updatedFeedbacks);
-    axios.post('http://localhost:5000/feedback/',newFeedback).then(resp =>{alert('added successfully')})
-    // localStorage.setItem("feedbacks", JSON.stringify(updatedFeedbacks));
+    // axios.post('http://localhost:5000/feedback/',newFeedback).then(resp =>{alert('added successfully')})
+    localStorage.setItem("feedbacks", JSON.stringify(updatedFeedbacks));
     setEmail("");
     setName("");
     setComment("");
